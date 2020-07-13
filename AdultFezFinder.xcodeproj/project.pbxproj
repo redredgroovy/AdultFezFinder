@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		651EC17424B45CEA00CC9879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC17324B45CEA00CC9879 /* AppDelegate.swift */; };
 		651EC17624B45CEA00CC9879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC17524B45CEA00CC9879 /* SceneDelegate.swift */; };
-		651EC17824B45CEA00CC9879 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC17724B45CEA00CC9879 /* ContentView.swift */; };
+		651EC17824B45CEA00CC9879 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC17724B45CEA00CC9879 /* MasterView.swift */; };
 		651EC17A24B45CEC00CC9879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651EC17924B45CEC00CC9879 /* Assets.xcassets */; };
 		651EC17D24B45CEC00CC9879 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651EC17C24B45CEC00CC9879 /* Preview Assets.xcassets */; };
 		651EC18024B45CEC00CC9879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651EC17E24B45CEC00CC9879 /* LaunchScreen.storyboard */; };
 		651EC18B24B45CEC00CC9879 /* AdultFezFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC18A24B45CEC00CC9879 /* AdultFezFinderTests.swift */; };
 		651EC19624B45CEC00CC9879 /* AdultFezFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC19524B45CEC00CC9879 /* AdultFezFinderUITests.swift */; };
+		659EC81224B8315700B0C1A4 /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC81124B8315700B0C1A4 /* PowerMeter.swift */; };
+		659EC81424B84C7C00B0C1A4 /* FezState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC81324B84C7C00B0C1A4 /* FezState.swift */; };
+		659EC81624B9674000B0C1A4 /* BLEController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC81524B9674000B0C1A4 /* BLEController.swift */; };
+		659EC81824BA3DDD00B0C1A4 /* BLEScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC81724BA3DDD00B0C1A4 /* BLEScanner.swift */; };
+		659EC81B24BC2D0100B0C1A4 /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC81A24BC2D0100B0C1A4 /* Timers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +43,7 @@
 		651EC17024B45CEA00CC9879 /* AdultFezFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdultFezFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		651EC17324B45CEA00CC9879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		651EC17524B45CEA00CC9879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		651EC17724B45CEA00CC9879 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		651EC17724B45CEA00CC9879 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		651EC17924B45CEC00CC9879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		651EC17C24B45CEC00CC9879 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		651EC17F24B45CEC00CC9879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		651EC19124B45CEC00CC9879 /* AdultFezFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdultFezFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		651EC19524B45CEC00CC9879 /* AdultFezFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultFezFinderUITests.swift; sourceTree = "<group>"; };
 		651EC19724B45CEC00CC9879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		659EC81124B8315700B0C1A4 /* PowerMeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
+		659EC81324B84C7C00B0C1A4 /* FezState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FezState.swift; sourceTree = "<group>"; };
+		659EC81524B9674000B0C1A4 /* BLEController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEController.swift; sourceTree = "<group>"; };
+		659EC81724BA3DDD00B0C1A4 /* BLEScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEScanner.swift; sourceTree = "<group>"; };
+		659EC81A24BC2D0100B0C1A4 /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +109,12 @@
 		651EC17224B45CEA00CC9879 /* AdultFezFinder */ = {
 			isa = PBXGroup;
 			children = (
+				659EC81924BC271D00B0C1A4 /* Models */,
 				651EC17324B45CEA00CC9879 /* AppDelegate.swift */,
 				651EC17524B45CEA00CC9879 /* SceneDelegate.swift */,
-				651EC17724B45CEA00CC9879 /* ContentView.swift */,
+				651EC17724B45CEA00CC9879 /* MasterView.swift */,
+				659EC81724BA3DDD00B0C1A4 /* BLEScanner.swift */,
+				659EC81124B8315700B0C1A4 /* PowerMeter.swift */,
 				651EC17924B45CEC00CC9879 /* Assets.xcassets */,
 				651EC17E24B45CEC00CC9879 /* LaunchScreen.storyboard */,
 				651EC18124B45CEC00CC9879 /* Info.plist */,
@@ -134,6 +147,16 @@
 				651EC19724B45CEC00CC9879 /* Info.plist */,
 			);
 			path = AdultFezFinderUITests;
+			sourceTree = "<group>";
+		};
+		659EC81924BC271D00B0C1A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				659EC81524B9674000B0C1A4 /* BLEController.swift */,
+				659EC81324B84C7C00B0C1A4 /* FezState.swift */,
+				659EC81A24BC2D0100B0C1A4 /* Timers.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +290,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659EC81824BA3DDD00B0C1A4 /* BLEScanner.swift in Sources */,
 				651EC17424B45CEA00CC9879 /* AppDelegate.swift in Sources */,
+				659EC81624B9674000B0C1A4 /* BLEController.swift in Sources */,
 				651EC17624B45CEA00CC9879 /* SceneDelegate.swift in Sources */,
-				651EC17824B45CEA00CC9879 /* ContentView.swift in Sources */,
+				659EC81424B84C7C00B0C1A4 /* FezState.swift in Sources */,
+				659EC81224B8315700B0C1A4 /* PowerMeter.swift in Sources */,
+				651EC17824B45CEA00CC9879 /* MasterView.swift in Sources */,
+				659EC81B24BC2D0100B0C1A4 /* Timers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AdultFezFinder/Preview Content\"";
+				DEVELOPMENT_TEAM = NA6XFP6TY3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AdultFezFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AdultFezFinder/Preview Content\"";
+				DEVELOPMENT_TEAM = NA6XFP6TY3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AdultFezFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
