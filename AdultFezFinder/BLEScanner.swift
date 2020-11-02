@@ -9,30 +9,13 @@
 import SwiftUI
 
 // Thresholds based on anecdotal experience
-func colorBasedOnStrength(rssi: Int) -> Color {
+func colorBasedOnStrength(_ rssi: Int) -> Color {
     if rssi >= -65 {
         return Color.green
     } else if rssi >= -75 {
         return Color.orange
     } else {
         return Color.red
-    }
-}
-
-// Wrapper for old UIKit UIActivityIndicatorView
-struct ActivityIndicator: UIViewRepresentable {
-    @Binding var show: Bool
-    
-    func makeUIView(context: Context) -> UIActivityIndicatorView {
-        return UIActivityIndicatorView(style: .large)
-    }
-    
-    func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) {
-        if self.show {
-            uiView.startAnimating()
-        } else {
-            uiView.stopAnimating()
-        }
     }
 }
 
@@ -55,7 +38,7 @@ struct BluetoothDisabledAlert: View {
 struct NoDevicesFoundAlert: View {
     var body: some View {
         VStack {
-            Text("No Bluetooth devices found")
+            Text("Scanning for Bluetooth devices...")
         }
         .padding()
         .background(Color.white)
@@ -82,21 +65,24 @@ struct PeripheralList: View {
             Rectangle()
                 .frame(height: 2)
                 .shadow(radius: 3)
-            
-            List {
-                ForEach(bleController.peripherals) { peripheral in
-                    Button(action: { self.bleController.startConnect(peripheral: peripheral) }) {
-                        HStack {
-                            Text(peripheral.name).lineLimit(1)
-                            Spacer()
-                            Text(String(peripheral.rssi))
-                                .font(Font.system(.body).monospacedDigit().weight(.semibold))
-                                .foregroundColor(colorBasedOnStrength(rssi: peripheral.rssi))
-                        }
+            List(bleController.discoveries, id: \.peripheralIdentifier.uuid) { discovery in
+                HStack {
+                    Text("NN").hidden().overlay(SignalStrengthBars(rssi: discovery.rssi))
+                    Text(discovery.peripheralIdentifier.name).lineLimit(1)
+                    Spacer()
+                    Button(action: { self.bleController.startConnect(peripheral: discovery.peripheralIdentifier) }) {
+                        Text("Connect")
+                            .foregroundColor(.blue)
+                            .font(.caption)
+                            .padding(7)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.blue, lineWidth: 2)
+                            )
                     }
                 }
             }
-
+            
             Rectangle()
                 .frame(height: 2)
                 .shadow(radius: 3)
@@ -113,7 +99,7 @@ struct ScanToggleButton: View {
     var body: some View {
         HStack {
             Button(action: { self.bleController.toggleScan() }) {
-                Text((bleController.state.case == .scanning ? "Stop" : "Start") + " Scanning")
+                Text((bleController.bluejay.isScanning ? "Stop" : "Start") + " Scanning")
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, minHeight: minHeight)
@@ -124,7 +110,7 @@ struct ScanToggleButton: View {
             }
             
             // Switch between antenna icon and activity scanner based on state
-            if bleController.state.case == .scanning {
+            if bleController.bluejay.isScanning {
                 ActivityIndicator(show: .constant(true))
                     .frame(minHeight: minHeight)
                     .frame(width: 60)
@@ -145,71 +131,58 @@ struct ScanToggleButton: View {
 //
 struct BLEScanner: View {
     @EnvironmentObject var bleController: BLEController
-        
+    
     var body: some View {
-
+        
         // ZStack for the entire View
         ZStack {
             VStack {
-                
                 Text("Adult Fez Finder")
                     .font(.headline)
-            
-                // ZStack for all peripheral controls
-                ZStack {
-                    VStack {
-                        
-                        // ZStack for just the peripheral list
-                        ZStack {
-                            PeripheralList()
-                                // Blur peripheral list and prevent it from receiving
-                                // input when scanning is disabled
-                                .blur(radius: bleController.state.case == .scanning ? 0 : 3)
-                                .allowsHitTesting(bleController.state.case == .scanning)
-                            
-                            // Create gray overlay when scanning is disabled
-                            if bleController.state.case != .scanning {
-                                Rectangle()
-                                    .fill(Color.black)
-                                    .opacity(0.2)
-                                    .blur(radius: 20)
 
-                            // Provide feedback when no devices are detected
-                            } else if bleController.stillWaiting {
-                                NoDevicesFoundAlert()
-                            }
-                        }
-                        
-                        ScanToggleButton()
-                            // Blur peripheral controls and prevent them from receiving
-                            // input when Bluetooth is disabled
-                            .blur(radius: bleController.state.case != .disabled ? 0 : 3)
-                            .allowsHitTesting(bleController.state.case != .disabled)
-                    }
+                Divider()
+                Section {
+                
+
+                // ZStack for just the peripheral list
+                ZStack {
+                    PeripheralList()
+                        // Blur peripheral list and prevent it from receiving
+                        // input when scanning is disabled
+                        .blur(radius: bleController.bluejay.isScanning ? 0 : 2)
+                        .allowsHitTesting(bleController.bluejay.isScanning)
                     
-                    // Create blue overlay when peripheral controls are disabled
-                    if bleController.state.case == .disabled {
+                    // Create gray overlay when scanning is disabled
+                    if !bleController.bluejay.isScanning {
                         Rectangle()
-                            .fill(Color.blue)
-                            .opacity(0.2)
+                            .fill(Color.black)
+                            .opacity(0.1)
                             .blur(radius: 20)
                             .edgesIgnoringSafeArea([.bottom])
+
+                    // Provide feedback when no devices are detected
+                    } else if bleController.stillWaiting {
+                        NoDevicesFoundAlert()
                     }
-                    
-                } // ZStack
-            } // VStack
+ 
+                }
+                
+                ScanToggleButton()
+            }
+            }
             
-            // Popup to request Bluetooth be enabled
-            if bleController.state.case == .disabled {
+            // Create blue overlay when peripheral controls are disabled
+            if !bleController.isBluetoothAvailable {
+                Rectangle()
+                    .fill(Color.blue)
+                    .opacity(0.1)
+                    .blur(radius: 20)
+                    .edgesIgnoringSafeArea([.bottom])
                 BluetoothDisabledAlert()
             }
-        } // ZStack
-        .alert(isPresented: .constant(bleController.state.case == .connecting)) {
-            Alert(
-                title: Text("Connecting to \(bleController.state.peripheral!.name)"),
-                message: Text("Press Cancel to abort"),
-                dismissButton: .default(Text("Cancel")) { self.bleController.stopConnect() }
-            )
+        }
+        .onAppear {
+            self.bleController.startScan()
         }
     }
 }

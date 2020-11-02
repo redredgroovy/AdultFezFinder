@@ -8,18 +8,47 @@
 
 import Foundation
 
+struct FezRoutine : Identifiable, Hashable {
+    let id = UUID()
+    let key: String
+    let label: String
+}
+
 final class FezState: NSObject, ObservableObject {
  
-    // Fez power management
+    let routines = [
+        FezRoutine(key: "null", label: "Null"),
+        FezRoutine(key: "fauxtv", label: "FauxTV"),
+        FezRoutine(key: "pacifica", label: "Pacifica"),
+        FezRoutine(key: "twinklefox", label: "TwinkleFOX")
+    ]
+    @Published var currentRoutineKey: String?
+
+    // Fez status data
     @Published var maDraw = Float(0.0)
-    @Published var maMax = Float(30.0)
+    @Published var maMax = Float(1.0)
     var maCapacity: Float {
         return (maDraw / maMax)
     }
     
-    // Fez animation/routine management
-    @Published var currentAnimation: String?
+    @Published var brt = Float(128.0)
+    @Published var brightness = Float(128.0)
 
-    // Connected BLEPeripheral
-    @Published var peripheral: BLEPeripheral?
+    @Published var FPS = Int(0)
+    
+    private var fakeTimer: Timer?
+    @objc func fakeFPS() {
+        FPS = Int.random(in: 15..<100)
+    }
+    
+    override init() {
+        super.init()
+        /*
+        fakeTimer = Timer.scheduledTimer(timeInterval: 1,
+                                         target: self,
+                                         selector: #selector(fakeFPS),
+                                         userInfo: nil,
+                                         repeats: true)
+        */
+    }
 }

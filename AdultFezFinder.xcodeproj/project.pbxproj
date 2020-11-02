@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065B85CA6BBD06CBC3501D0D /* Pods_AdultFezFinder_AdultFezFinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF19805DB72432375985BB8 /* Pods_AdultFezFinder_AdultFezFinderUITests.framework */; };
+		54C2DB63F5A2F15C06764431 /* Pods_AdultFezFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADB2B2C04EBC3E8DD2F1E1 /* Pods_AdultFezFinderTests.framework */; };
 		651EC17424B45CEA00CC9879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC17324B45CEA00CC9879 /* AppDelegate.swift */; };
 		651EC17624B45CEA00CC9879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC17524B45CEA00CC9879 /* SceneDelegate.swift */; };
 		651EC17824B45CEA00CC9879 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC17724B45CEA00CC9879 /* MasterView.swift */; };
@@ -15,11 +17,16 @@
 		651EC18024B45CEC00CC9879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651EC17E24B45CEC00CC9879 /* LaunchScreen.storyboard */; };
 		651EC18B24B45CEC00CC9879 /* AdultFezFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC18A24B45CEC00CC9879 /* AdultFezFinderTests.swift */; };
 		651EC19624B45CEC00CC9879 /* AdultFezFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EC19524B45CEC00CC9879 /* AdultFezFinderUITests.swift */; };
+		6588140424C29BBA00FDB884 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6588140324C29BBA00FDB884 /* Logger.swift */; };
+		6588140624C5347300FDB884 /* Fez.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6588140524C5347300FDB884 /* Fez.swift */; };
+		6588140824C76DF900FDB884 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6588140724C76DF900FDB884 /* ActivityIndicator.swift */; };
+		6588140C24C817EA00FDB884 /* SignalStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6588140B24C817EA00FDB884 /* SignalStrength.swift */; };
 		659EC81224B8315700B0C1A4 /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC81124B8315700B0C1A4 /* PowerMeter.swift */; };
 		659EC81424B84C7C00B0C1A4 /* FezState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC81324B84C7C00B0C1A4 /* FezState.swift */; };
 		659EC81624B9674000B0C1A4 /* BLEController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC81524B9674000B0C1A4 /* BLEController.swift */; };
 		659EC81824BA3DDD00B0C1A4 /* BLEScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC81724BA3DDD00B0C1A4 /* BLEScanner.swift */; };
 		659EC81B24BC2D0100B0C1A4 /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659EC81A24BC2D0100B0C1A4 /* Timers.swift */; };
+		9606FCCC838E58DB38B59D79 /* Pods_AdultFezFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBCE281991FE7B1E3874598 /* Pods_AdultFezFinder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F3558ADEDFF81157F5D0BF0 /* Pods-AdultFezFinder-AdultFezFinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdultFezFinder-AdultFezFinderUITests.release.xcconfig"; path = "Target Support Files/Pods-AdultFezFinder-AdultFezFinderUITests/Pods-AdultFezFinder-AdultFezFinderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		55ADB2B2C04EBC3E8DD2F1E1 /* Pods_AdultFezFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdultFezFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		651EC17024B45CEA00CC9879 /* AdultFezFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdultFezFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		651EC17324B45CEA00CC9879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		651EC17524B45CEA00CC9879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,11 +63,22 @@
 		651EC19124B45CEC00CC9879 /* AdultFezFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdultFezFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		651EC19524B45CEC00CC9879 /* AdultFezFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultFezFinderUITests.swift; sourceTree = "<group>"; };
 		651EC19724B45CEC00CC9879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6588140324C29BBA00FDB884 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		6588140524C5347300FDB884 /* Fez.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fez.swift; sourceTree = "<group>"; };
+		6588140724C76DF900FDB884 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		6588140B24C817EA00FDB884 /* SignalStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalStrength.swift; sourceTree = "<group>"; };
 		659EC81124B8315700B0C1A4 /* PowerMeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
 		659EC81324B84C7C00B0C1A4 /* FezState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FezState.swift; sourceTree = "<group>"; };
 		659EC81524B9674000B0C1A4 /* BLEController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEController.swift; sourceTree = "<group>"; };
 		659EC81724BA3DDD00B0C1A4 /* BLEScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEScanner.swift; sourceTree = "<group>"; };
 		659EC81A24BC2D0100B0C1A4 /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
+		65BB9D65CC33C990D79E683C /* Pods-AdultFezFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdultFezFinder.release.xcconfig"; path = "Target Support Files/Pods-AdultFezFinder/Pods-AdultFezFinder.release.xcconfig"; sourceTree = "<group>"; };
+		767D222A171E3CB925724756 /* Pods-AdultFezFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdultFezFinder.debug.xcconfig"; path = "Target Support Files/Pods-AdultFezFinder/Pods-AdultFezFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		83FD21794E0F14388D3B6338 /* Pods-AdultFezFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdultFezFinderTests.release.xcconfig"; path = "Target Support Files/Pods-AdultFezFinderTests/Pods-AdultFezFinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		8FF19805DB72432375985BB8 /* Pods_AdultFezFinder_AdultFezFinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdultFezFinder_AdultFezFinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4D47294FA3EA0DD5F314D4E /* Pods-AdultFezFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdultFezFinderTests.debug.xcconfig"; path = "Target Support Files/Pods-AdultFezFinderTests/Pods-AdultFezFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CFBCE281991FE7B1E3874598 /* Pods_AdultFezFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdultFezFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE73532F03305404BF5D5B92 /* Pods-AdultFezFinder-AdultFezFinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdultFezFinder-AdultFezFinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-AdultFezFinder-AdultFezFinderUITests/Pods-AdultFezFinder-AdultFezFinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9606FCCC838E58DB38B59D79 /* Pods_AdultFezFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54C2DB63F5A2F15C06764431 /* Pods_AdultFezFinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +102,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065B85CA6BBD06CBC3501D0D /* Pods_AdultFezFinder_AdultFezFinderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E5480956AB506612882E562 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				767D222A171E3CB925724756 /* Pods-AdultFezFinder.debug.xcconfig */,
+				65BB9D65CC33C990D79E683C /* Pods-AdultFezFinder.release.xcconfig */,
+				FE73532F03305404BF5D5B92 /* Pods-AdultFezFinder-AdultFezFinderUITests.debug.xcconfig */,
+				4F3558ADEDFF81157F5D0BF0 /* Pods-AdultFezFinder-AdultFezFinderUITests.release.xcconfig */,
+				B4D47294FA3EA0DD5F314D4E /* Pods-AdultFezFinderTests.debug.xcconfig */,
+				83FD21794E0F14388D3B6338 /* Pods-AdultFezFinderTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		651EC16724B45CEA00CC9879 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +129,8 @@
 				651EC18924B45CEC00CC9879 /* AdultFezFinderTests */,
 				651EC19424B45CEC00CC9879 /* AdultFezFinderUITests */,
 				651EC17124B45CEA00CC9879 /* Products */,
+				2E5480956AB506612882E562 /* Pods */,
+				6BD6B6056FBCB479163A60D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,12 +147,14 @@
 		651EC17224B45CEA00CC9879 /* AdultFezFinder */ = {
 			isa = PBXGroup;
 			children = (
+				6588140A24C8176000FDB884 /* Widgets */,
+				6588140924C78BCB00FDB884 /* Animations */,
 				659EC81924BC271D00B0C1A4 /* Models */,
 				651EC17324B45CEA00CC9879 /* AppDelegate.swift */,
 				651EC17524B45CEA00CC9879 /* SceneDelegate.swift */,
 				651EC17724B45CEA00CC9879 /* MasterView.swift */,
 				659EC81724BA3DDD00B0C1A4 /* BLEScanner.swift */,
-				659EC81124B8315700B0C1A4 /* PowerMeter.swift */,
+				6588140524C5347300FDB884 /* Fez.swift */,
 				651EC17924B45CEC00CC9879 /* Assets.xcassets */,
 				651EC17E24B45CEC00CC9879 /* LaunchScreen.storyboard */,
 				651EC18124B45CEC00CC9879 /* Info.plist */,
@@ -149,14 +189,42 @@
 			path = AdultFezFinderUITests;
 			sourceTree = "<group>";
 		};
+		6588140924C78BCB00FDB884 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		6588140A24C8176000FDB884 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				6588140724C76DF900FDB884 /* ActivityIndicator.swift */,
+				659EC81124B8315700B0C1A4 /* PowerMeter.swift */,
+				6588140B24C817EA00FDB884 /* SignalStrength.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		659EC81924BC271D00B0C1A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				659EC81524B9674000B0C1A4 /* BLEController.swift */,
 				659EC81324B84C7C00B0C1A4 /* FezState.swift */,
 				659EC81A24BC2D0100B0C1A4 /* Timers.swift */,
+				6588140324C29BBA00FDB884 /* Logger.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6BD6B6056FBCB479163A60D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFBCE281991FE7B1E3874598 /* Pods_AdultFezFinder.framework */,
+				8FF19805DB72432375985BB8 /* Pods_AdultFezFinder_AdultFezFinderUITests.framework */,
+				55ADB2B2C04EBC3E8DD2F1E1 /* Pods_AdultFezFinderTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 651EC19A24B45CEC00CC9879 /* Build configuration list for PBXNativeTarget "AdultFezFinder" */;
 			buildPhases = (
+				11CB3FD00BC823F2D760FE23 /* [CP] Check Pods Manifest.lock */,
 				651EC16C24B45CEA00CC9879 /* Sources */,
 				651EC16D24B45CEA00CC9879 /* Frameworks */,
 				651EC16E24B45CEA00CC9879 /* Resources */,
+				AB6702D0D5FB93444C9F372E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +253,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 651EC19D24B45CEC00CC9879 /* Build configuration list for PBXNativeTarget "AdultFezFinderTests" */;
 			buildPhases = (
+				1D4ABC0FBF395554083532E7 /* [CP] Check Pods Manifest.lock */,
 				651EC18224B45CEC00CC9879 /* Sources */,
 				651EC18324B45CEC00CC9879 /* Frameworks */,
 				651EC18424B45CEC00CC9879 /* Resources */,
@@ -201,9 +272,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 651EC1A024B45CEC00CC9879 /* Build configuration list for PBXNativeTarget "AdultFezFinderUITests" */;
 			buildPhases = (
+				92DE738CD24CAC72E2ED7E09 /* [CP] Check Pods Manifest.lock */,
 				651EC18D24B45CEC00CC9879 /* Sources */,
 				651EC18E24B45CEC00CC9879 /* Frameworks */,
 				651EC18F24B45CEC00CC9879 /* Resources */,
+				E106EB8494E792B446029E9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,17 +358,124 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11CB3FD00BC823F2D760FE23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdultFezFinder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D4ABC0FBF395554083532E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdultFezFinderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92DE738CD24CAC72E2ED7E09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdultFezFinder-AdultFezFinderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB6702D0D5FB93444C9F372E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdultFezFinder/Pods-AdultFezFinder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdultFezFinder/Pods-AdultFezFinder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdultFezFinder/Pods-AdultFezFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E106EB8494E792B446029E9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdultFezFinder-AdultFezFinderUITests/Pods-AdultFezFinder-AdultFezFinderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdultFezFinder-AdultFezFinderUITests/Pods-AdultFezFinder-AdultFezFinderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdultFezFinder-AdultFezFinderUITests/Pods-AdultFezFinder-AdultFezFinderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		651EC16C24B45CEA00CC9879 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6588140C24C817EA00FDB884 /* SignalStrength.swift in Sources */,
 				659EC81824BA3DDD00B0C1A4 /* BLEScanner.swift in Sources */,
 				651EC17424B45CEA00CC9879 /* AppDelegate.swift in Sources */,
 				659EC81624B9674000B0C1A4 /* BLEController.swift in Sources */,
 				651EC17624B45CEA00CC9879 /* SceneDelegate.swift in Sources */,
+				6588140424C29BBA00FDB884 /* Logger.swift in Sources */,
+				6588140824C76DF900FDB884 /* ActivityIndicator.swift in Sources */,
 				659EC81424B84C7C00B0C1A4 /* FezState.swift in Sources */,
 				659EC81224B8315700B0C1A4 /* PowerMeter.swift in Sources */,
+				6588140624C5347300FDB884 /* Fez.swift in Sources */,
 				651EC17824B45CEA00CC9879 /* MasterView.swift in Sources */,
 				659EC81B24BC2D0100B0C1A4 /* Timers.swift in Sources */,
 			);
@@ -460,6 +640,7 @@
 		};
 		651EC19B24B45CEC00CC9879 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 767D222A171E3CB925724756 /* Pods-AdultFezFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,6 +661,7 @@
 		};
 		651EC19C24B45CEC00CC9879 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65BB9D65CC33C990D79E683C /* Pods-AdultFezFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,6 +682,7 @@
 		};
 		651EC19E24B45CEC00CC9879 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4D47294FA3EA0DD5F314D4E /* Pods-AdultFezFinderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -521,6 +704,7 @@
 		};
 		651EC19F24B45CEC00CC9879 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83FD21794E0F14388D3B6338 /* Pods-AdultFezFinderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -542,6 +726,7 @@
 		};
 		651EC1A124B45CEC00CC9879 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE73532F03305404BF5D5B92 /* Pods-AdultFezFinder-AdultFezFinderUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,6 +746,7 @@
 		};
 		651EC1A224B45CEC00CC9879 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F3558ADEDFF81157F5D0BF0 /* Pods-AdultFezFinder-AdultFezFinderUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

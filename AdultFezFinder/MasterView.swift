@@ -14,9 +14,9 @@ struct MasterView: View {
 
     var body: some View {
         VStack {
-            if fezState.peripheral != nil {
-                PowerMeter()
-            } else if bleController.state.case != .connected {
+            if bleController.isConnecting || bleController.isConnected {
+                Fez()
+            } else {
                 BLEScanner()
             }
         }

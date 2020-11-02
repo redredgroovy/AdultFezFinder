@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PowerMeterBar: View {
-    @EnvironmentObject var fezState: FezState
+    @EnvironmentObject var fezState: BLEController
     
     let powerFade = LinearGradient(
         gradient: Gradient(colors: [.green, .green, .yellow, .red]),
@@ -22,7 +22,7 @@ struct PowerMeterBar: View {
                 Rectangle()
                     .fill(Color(UIColor.systemGray5))
                     .overlay(Rectangle()
-                        .size(width: CGFloat(self.fezState.maCapacity)*geometry.size.width, height: geometry.size.height)
+                        .size(width: CGFloat(self.fezState.fez.maCapacity)*geometry.size.width, height: geometry.size.height)
                         .fill(self.powerFade)
                         .animation(.easeOut(duration: 0.3))
                 ).cornerRadius(5)
@@ -32,10 +32,10 @@ struct PowerMeterBar: View {
 }
 
 struct PowerMeterLabel: View {
-    @EnvironmentObject var fezState: FezState
+    @EnvironmentObject var fezState: BLEController
     
     var body: some View {
-        Text("\(self.fezState.maDraw, specifier: "%5.2f") A")
+        Text("\(self.fezState.fez.maDraw, specifier: "%5.2f") A")
             .font(.system(.body, design: .monospaced))
             .bold()
             .multilineTextAlignment(.trailing)
