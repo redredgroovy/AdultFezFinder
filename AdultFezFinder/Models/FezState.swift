@@ -8,47 +8,94 @@
 
 import Foundation
 
+import DSFSparkline
+
+let DEFAULT_LED_VOLTAGE     = Float(5.0)
+let DEFAULT_BATTERY_VOLTAGE = Float(12.0)
+let DEFAULT_POWER_MAX       = Float(1.0)
+let DEFAULT_BRIGHTNESS      = Int(32)
+
 struct FezRoutine : Identifiable, Hashable {
     let id = UUID()
     let key: String
     let label: String
+    
+    let idealBrightness: Int
+    let defaultHue: Int
+    let defaultRainbowToggle: Bool
+    let defaultText: String
 }
+let unknownRoutine = FezRoutine(
+    key: "unknown",
+    label: "Unknown",
+    
+    idealBrightness: 32,
+    defaultHue: -1,
+    defaultRainbowToggle: false,
+    defaultText: ""
+)
 
 final class FezState: NSObject, ObservableObject {
- 
-    let routines = [
-        FezRoutine(key: "null", label: "Null"),
-        FezRoutine(key: "fauxtv", label: "FauxTV"),
-        FezRoutine(key: "pacifica", label: "Pacifica"),
-        FezRoutine(key: "twinklefox", label: "TwinkleFOX")
-    ]
-    @Published var currentRoutineKey: String?
-
+    @Published var routines = [String : FezRoutine]()
+    
+    // Routine configuration data
+    @Published var currentRoutine: FezRoutine?
+    @Published var hue = Int(-1)
+    @Published var selectedHue = Float(0);
+    @Published var customHueToggle = false
+    @Published var rainbowToggle = false
+    @Published var text = ""
+    
     // Fez status data
-    @Published var maDraw = Float(0.0)
-    @Published var maMax = Float(1.0)
-    var maCapacity: Float {
-        return (maDraw / maMax)
+    @Published var ledVoltage = Float(DEFAULT_LED_VOLTAGE)
+    @Published var batteryVoltage = Float(DEFAULT_BATTERY_VOLTAGE)
+    @Published var uptime = Int32(0)
+    
+    @Published var powerDraw = Float(0.0)
+    @Published var powerMax = Float(DEFAULT_POWER_MAX)
+    var powerDrawPct: Float {
+        return (powerDraw / powerMax)
+    }
+    var currentDraw: Float {
+        return powerDraw / ledVoltage
+    }
+    var currentMax: Float {
+        return powerMax / ledVoltage
     }
     
-    @Published var brt = Float(128.0)
-    @Published var brightness = Float(128.0)
+    // Store approximately 60 seconds worth of historical power samples
+    @Published var powerDataSource = DSFSparkline.DataSource(windowSize: 240, range: 0.0 ... 1.0)
+
+    @Published var targetBrightness = Float(DEFAULT_BRIGHTNESS) // directly manipulated by UI Slider
+    @Published var scaledBrightness = Int(DEFAULT_BRIGHTNESS)
+    @Published var maxBrightness    = Int(DEFAULT_BRIGHTNESS)
 
     @Published var FPS = Int(0)
     
-    private var fakeTimer: Timer?
-    @objc func fakeFPS() {
-        FPS = Int.random(in: 15..<100)
-    }
+    @Published var initialized = false
     
-    override init() {
-        super.init()
-        /*
-        fakeTimer = Timer.scheduledTimer(timeInterval: 1,
-                                         target: self,
-                                         selector: #selector(fakeFPS),
-                                         userInfo: nil,
-                                         repeats: true)
-        */
+    // Clear state when we disconnect/change peripherals
+    func reset() {
+        self.currentRoutine = nil
+        
+        self.hue = -1
+        self.selectedHue = 0
+        self.customHueToggle = false
+        self.rainbowToggle = false
+        self.text = ""
+        
+        self.ledVoltage = DEFAULT_LED_VOLTAGE
+        self.batteryVoltage = DEFAULT_BATTERY_VOLTAGE
+        self.uptime = 0
+        
+        self.powerDraw = 0.0
+        self.powerMax = DEFAULT_POWER_MAX
+        self.powerDataSource.reset()
+        
+        self.scaledBrightness = DEFAULT_BRIGHTNESS
+        self.maxBrightness = DEFAULT_BRIGHTNESS
+    
+        self.FPS = 0
+        self.initialized = false
     }
 }

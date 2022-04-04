@@ -28,6 +28,7 @@ struct SignalStrengthBars: View {
     // color() and bars() may need to be updated if this changes
     private let totalBars: Int = 4
     
+    // These are totally arbitrary thresholds
     var bars: Int {
         if rssi >= -50 {
             return 4
@@ -69,7 +70,9 @@ struct SignalStrengthLabel: View {
     var body: some View {
         Text("\(rssi) dB")
             .lineLimit(1)
+            .font(.system(size: 300))
             .minimumScaleFactor(.leastNonzeroMagnitude)
+            .padding(0)
     }
 }
 
@@ -85,7 +88,9 @@ struct SignalStrength_Previews: PreviewProvider {
             HStack {
                 Text("NN").hidden().overlay(SignalStrengthBars(rssi: -35))
                 SignalStrengthLabel(rssi: -35)
+                    .frame(height: 30)
             }
         }
     }
 }
+

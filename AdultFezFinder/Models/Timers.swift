@@ -11,17 +11,19 @@ import Foundation
 //
 // A wrapper to ensure that action is executed no more than once per TimeInterval
 //
-// This helps us "debounce" or otherwise reduce the overhead of calling a function
+// This helps us "throttle" or otherwise reduce the overhead of calling a function
 // which is triggered by rapid UI events, such as a slider being modified
 //
 // Example:
-// let debouncer = Debouncer(delay: 0.1)
-// debouncer.run(action: {...})
+// let throttler = Throttle(delay: 0.1)
+// throttler.run(action: {...})
 //
-class Debouncer {
+class Throttler {
     private let delay: TimeInterval
+    
     private var workItem: DispatchWorkItem?
-
+    private var lastExecution: DispatchTime = .now()
+    
     init(delay: TimeInterval) {
         self.delay = delay
     }
@@ -29,28 +31,13 @@ class Debouncer {
     // Trigger the action after some delay, reset the action if it has not yet triggered
     public func run(action: @escaping () -> Void) {
         workItem?.cancel()
-        workItem = DispatchWorkItem(block: action)
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: workItem!)
-    }
-}
-
-//
-// Defers calling the provided action until TimeInterval has passed
-//
-// Example:
-// let countdown = Countdown(seconds: 5, action: {...})
-///
-class Countdown {
-    private let timer: Timer
-    
-    init(seconds: TimeInterval, action: @escaping () -> ()) {
-        timer = Timer.scheduledTimer(withTimeInterval: seconds,
-                repeats: false, block: { _ in
-            action();
-        })
-    }
-    
-    deinit {
-        timer.invalidate()
+        //workItem = DispatchWorkItem(block: action)
+        workItem = DispatchWorkItem { [weak self] in
+            if let selfStrong = self {
+                selfStrong.lastExecution = .now()
+            }
+            action()
+        }
+        DispatchQueue.main.asyncAfter(deadline: (self.lastExecution + delay), execute: workItem!)
     }
 }

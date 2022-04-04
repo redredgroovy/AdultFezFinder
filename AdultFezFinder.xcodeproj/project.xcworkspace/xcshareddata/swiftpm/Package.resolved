@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "bluejay",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/steamclock/bluejay",
+      "state" : {
+        "branch" : "master",
+        "revision" : "cf394b91af0e6029be8c85f3812440797b3812d6"
+      }
+    },
+    {
+      "identity" : "dsfsparkline",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dagronf/DSFSparkline",
+      "state" : {
+        "revision" : "7847d7c2ada45f74af66618f77c489fd72eab122",
+        "version" : "4.3.0"
+      }
+    },
+    {
+      "identity" : "keyboardobserving",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nickffox/KeyboardObserving",
+      "state" : {
+        "branch" : "master",
+        "revision" : "df105a7c43a93b06492ee5832037e20c8f472b46"
+      }
+    },
+    {
+      "identity" : "swiftuix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftUIX/SwiftUIX",
+      "state" : {
+        "revision" : "889c781539cdd1e6a1111472c711082522aa35c6",
+        "version" : "0.1.2"
+      }
+    },
+    {
+      "identity" : "xcglogger",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DaveWoodCom/XCGLogger",
+      "state" : {
+        "revision" : "a9c4667b247928a29bdd41be2ec2c8d304215a54",
+        "version" : "7.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
